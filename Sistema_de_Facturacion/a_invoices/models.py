@@ -14,4 +14,8 @@ class Cliente(models.Model):
     tipo      = models.CharField(max_length=10, choices=TIPO_OPCIONES, default='particular')
 
 class Factura(models.Model):
-    pass 
+    importe   = models.DecimalField(decimal_places=2, max_digits=8)
+    impuestos = models.IntegerField(default=21) # %
+    cliente   = models.ForeignKey(Cliente, on_delete=models.DO_NOTHING)
+    created_en = models.DateTimeField(auto_now_add=True)
+    actualizado_en = models.DateTimeField(auto_now=True)
