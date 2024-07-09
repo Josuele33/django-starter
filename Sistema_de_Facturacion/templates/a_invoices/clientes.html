@@ -2,4 +2,13 @@
 
 <h2>Cliente: #{{ cliente.id }}</h2>
 
+<style>
+    body {
+        background-color: bisque;
+    }
+</style>
+
 <p>Nombre: {{ cliente.nombre }}</p>
+
+<hr>
+<a href="{% url 'invoices' %}">Volver a lista</a>
