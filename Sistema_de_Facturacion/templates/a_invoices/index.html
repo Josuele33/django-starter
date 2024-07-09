@@ -1,13 +1,37 @@
 <h2>Clientes</h2>
 
-<!-- clientes de db -->
-{{ clientes }}
+<style>
+    body {
+        background-color: bisque;
+    }
+</style>
 
 <!-- Dato desde el backend:  -->
 <!-- {{ secret }} -->
 
+<!-- clientes de db -->
+<!-- "a lo bestia" -->
+<!-- {{ clientes }} -->
+
+<ul>
+{% for cliente in clientes %}
+    <li>
+        <a href="#">{{ cliente.nombre }}: {{ cliente.email }}</a>
+    </li>
+{% endfor %}
+</ul>
+
+
 <h2>Facturas</h2>
 
+<ul>
+{% for factura in facturas %}
+    <li>
+        <a href="#">Factura #{{ factura.id }} de {{ factura.cliente.nombre }}, {{ factura.cliente.apellido }}</a>
+    </li>
+{% endfor %}
+</ul>
+
 <!-- facturas desde el db -->
- {{ facturas }}
- 
+<!-- "a lo bestia:" -->
+<!-- {{ facturas }} -->
