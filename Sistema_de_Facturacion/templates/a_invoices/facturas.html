@@ -4,3 +4,7 @@
 
 <p>Factura de: {{ factura.cliente.nombre }}</p>
 <p>Importe: {{ factura.importe }} €</p>
+
+<hr>
+<a href="{% url 'invoices' %}">Volver a lista</a>
+<a href="#" onclick="window.print()">Imprimir</a>

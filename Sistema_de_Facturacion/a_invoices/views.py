@@ -23,3 +23,12 @@ def detalle_cliente(request, id):
         "cliente": cliente
     }
     return render(request, "a_invoices/clientes.html", context=context)
+
+def detalle_factura(request, id):
+    factura = Factura.objects.all().filter(pk=id).first()
+    
+    context = {
+        "factura": factura
+    }
+    return render(request, "a_invoices/facturas.html", context=context)
+
